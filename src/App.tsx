@@ -15,6 +15,7 @@ import { fetchSetting } from "./lib/nezha-api";
 import { cn } from "./lib/utils";
 import ErrorPage from "./pages/ErrorPage";
 import Server from "./pages/Server";
+import NetworkPage from "./pages/NetworkPage";
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 const loadServerDetail = () => import("./pages/ServerDetail");
@@ -118,6 +119,10 @@ const MainApp: React.FC = () => {
 						<Route
 							path="/"
 							element={<Server backendError={initialBackendError} />}
+						/>
+						<Route
+							path="/network"
+							element={<NetworkPage />}
 						/>
 						<Route
 							path="/server/:id"
